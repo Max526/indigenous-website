@@ -5,6 +5,62 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>臺灣原住民族介紹</title>
   <style>
+    .search-filter {
+  max-width: 960px;
+  margin: 20px auto 10px;
+  padding: 12px 16px;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.search-filter h2 {
+  margin: 0 0 6px;
+  font-size: 1.1rem;
+}
+
+.search-desc {
+  margin: 0 0 10px;
+  font-size: 0.9rem;
+  color: #4a5568;
+}
+
+.search-input {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 999px;
+  border: 1px solid #cbd5e0;
+  outline: none;
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+}
+
+.search-input:focus {
+  border-color: #3182ce;
+  box-shadow: 0 0 0 2px rgba(49,130,206,0.3);
+}
+
+.filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.chip {
+  border: 1px solid #cbd5e0;
+  background: #edf2f7;
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.chip.active {
+  background: #3182ce;
+  color: #fff;
+  border-color: #3182ce;
+}
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -489,26 +545,55 @@
         <div class="section-header">
           <div>
             <h2>部分臺灣原住民族簡介</h2>
-            <p class="section-subtitle">以下僅示範數族，你可以依需要自行增加或修改內容。</p>
+            <p class="section-subtitle"></p>
           </div>
         </div>
+<section class="search-filter">
+  <h2>搜尋與篩選族群</h2>
+  <p class="search-desc">可以輸入關鍵字（例如「海洋」、「山區」、「台東」），或依地區篩選想認識的族群。</p>
 
+  <!-- 關鍵字搜尋框 -->
+  <input
+    id="searchInput"
+    type="text"
+    placeholder="輸入族名、地點或關鍵字搜尋..."
+    class="search-input">
+
+  <!-- 地區篩選按鈕 -->
+  <div class="filter-chips">
+    <button class="chip active" data-region="all">全部</button>
+    <button class="chip" data-region="north">北部</button>
+    <button class="chip" data-region="central">中部</button>
+    <button class="chip" data-region="south">南部</button>
+    <button class="chip" data-region="east">東部</button>
+    <button class="chip" data-region="island">離島</button>
+  </div>
+</section>
         <div class="tribe-grid">
 
           <!-- 阿美族 -->
-<article class="tribe-card" onclick="window.location.href='amis.html'">
+<article class="tribe-card" data-region="east" onclick="window.location.href='amis.html'">
   <div class="tribe-chip">
     <span class="tribe-chip-dot"></span>
     東部沿海
   </div>
-  <div class="tribe-name">阿美族<span class="tribe-eng">Amis</span></div>
-  <div class="tribe-region">主要分布：花蓮、台東、宜蘭等東部沿海地區</div>
+
+  <div class="tribe-name">
+    阿美族 <span class="tribe-eng">Amis</span>
+  </div>
+
+  <div class="tribe-region">
+    主要分布：花蓮、台東、宜蘭等東部沿海地區
+  </div>
+
   <p class="tribe-intro">
     阿美族是台灣人口最多的原住民族之一，傳統上以農耕與漁撈為主，社會組織具有明顯的年齡階級制度。
   </p>
+
   <p class="tribe-feature">
     文化特色：豐年祭、歌舞、口傳歷史與母語保存運動。
   </p>
+
   <div class="tribe-meta">
     <span>點擊卡片進入詳細介紹頁</span>
     <span>Amis Page</span>
@@ -516,20 +601,30 @@
 </article>
 
 
+
         <!-- 泰雅族卡片（index.html 裡） -->
-<article class="tribe-card" onclick="window.location.href='atayal.html'">
+<article class="tribe-card" data-region="north" onclick="window.location.href='atayal.html'">
   <div class="tribe-chip">
     <span class="tribe-chip-dot"></span>
     中北部山區
   </div>
-  <div class="tribe-name">泰雅族<span class="tribe-eng">Atayal</span></div>
-  <div class="tribe-region">主要分布：新北、桃園、宜蘭、南投等山區</div>
+
+  <div class="tribe-name">
+    泰雅族 <span class="tribe-eng">Atayal</span>
+  </div>
+
+  <div class="tribe-region">
+    主要分布：新北、桃園、宜蘭、南投等山區
+  </div>
+
   <p class="tribe-intro">
     泰雅族以嚴謹的 gaga 祖訓為核心價值，傳統紋面與織布圖紋是族群重要的文化象徵。
   </p>
+
   <p class="tribe-feature">
     文化特色：紋面文化、織布技藝、山林知識與狩獵傳統。
   </p>
+
   <div class="tribe-meta">
     <span>點擊卡片進入詳細介紹頁</span>
     <span>Atayal Page</span>
@@ -537,153 +632,221 @@
 </article>
 
 
+
           <!-- 排灣族 -->
-         <article class="tribe-card" onclick="window.location.href='paiwan.html'">
-            <div class="tribe-chip">
-              <span class="tribe-chip-dot"></span>
-              南部山區
-            </div>
-            <div class="tribe-name">排灣族<span class="tribe-eng">Paiwan</span></div>
-            <div class="tribe-region">主要分布：屏東、台東南部山區</div>
-            <p class="tribe-intro">
-              排灣族擁有發展成熟的貴族制度與家族系譜，陶壺與琉璃珠象徵身分與歷史記憶。
+         <!-- 排灣族 -->
+<article class="tribe-card" data-region="south" onclick="window.location.href='paiwan.html'">
+  <div class="tribe-chip">
+    <span class="tribe-chip-dot"></span>
+    南部山區
+  </div>
 
-            </p>
-            <p class="tribe-feature">
-              文化特色：貴族階級、百步蛇圖騰、琉璃珠與陶壺信仰。
+  <div class="tribe-name">
+    排灣族 <span class="tribe-eng">Paiwan</span>
+  </div>
 
-            </p>
-            <div class="tribe-meta">
+  <div class="tribe-region">
+    主要分布：屏東、台東南部山區
+  </div>
+
+  <p class="tribe-intro">
+    排灣族擁有發展成熟的貴族制度與家族系譜，陶壺與琉璃珠象徵身分與歷史記憶。
+  </p>
+
+  <p class="tribe-feature">
+    文化特色：貴族階級、百步蛇圖騰、琉璃珠與陶壺信仰。
+  </p>
+
+  <div class="tribe-meta">
     <span>點擊卡片進入詳細介紹頁</span>
-    <span>Atayal Page</span>
-            </div>
-          </article>
+    <span>Paiwan Page</span>
+  </div>
+</article>
+
 
           <!-- 布農族 -->
-         <article class="tribe-card" onclick="window.location.href='bunun.html'">
-            <div class="tribe-chip">
-              <span class="tribe-chip-dot"></span>
-              中部山區
-            </div>
-            <div class="tribe-name">布農族<span class="tribe-eng">Bunun</span></div>
-            <div class="tribe-region">主要分布：南投、花蓮、高雄等中高海拔山區</div>
-            <p class="tribe-intro">
-              布農族多居住於山區，傳統社會以小米農耕為核心，重視家族合作與共享。
-            </p>
-            <p class="tribe-feature">
-              文化特色：小米祭、八部合音、狩獵文化與山林生活智慧。
-            </p>
+<!-- 布農族 -->
+<article class="tribe-card" data-region="central" onclick="window.location.href='bunun.html'">
+  <div class="tribe-chip">
+    <span class="tribe-chip-dot"></span>
+    中部山區
+  </div>
 
-            <div class="tribe-meta">
-             <span>點擊卡片進入詳細介紹頁</span>
-             <span>Atayal Page</span>
-            </div>
-          </article>
+  <div class="tribe-name">
+    布農族 <span class="tribe-eng">Bunun</span>
+  </div>
+
+  <div class="tribe-region">
+    主要分布：南投、花蓮、高雄等中高海拔山區
+  </div>
+
+  <p class="tribe-intro">
+    布農族多居住於山區，傳統社會以小米農耕為核心，重視家族合作與共享。
+  </p>
+
+  <p class="tribe-feature">
+    文化特色：小米祭、八部合音、狩獵文化與山林生活智慧。
+  </p>
+
+  <div class="tribe-meta">
+    <span>點擊卡片進入詳細介紹頁</span>
+    <span>Bunun Page</span>
+  </div>
+</article>
+
 
           <!-- 魯凱族 -->
-          <article class="tribe-card" onclick="window.location.href='rukai.html'">
-            <div class="tribe-chip">
-              <span class="tribe-chip-dot"></span>
-              南部山區
-            </div>
-            <div class="tribe-name">魯凱族<span class="tribe-eng">Rukai</span></div>
-            <div class="tribe-region">主要分布：高雄、屏東山區</div>
-            <p class="tribe-intro">
-              魯凱族以精緻的石板屋建築與百合花意象聞名，對土地與傳統領域有深厚情感。
-            </p>
-            <p class="tribe-feature">
-              文化特色：石板屋、百合花象徵、頭目制度與祭典儀式。
-            </p>
+<!-- 魯凱族 -->
+<article class="tribe-card" data-region="south" onclick="window.location.href='rukai.html'">
+  <div class="tribe-chip">
+    <span class="tribe-chip-dot"></span>
+    南部山區
+  </div>
 
-            <div class="tribe-meta">
-             <span>點擊卡片進入詳細介紹頁</span>
-             <span>Atayal Page</span>
-            </div>
-          </article>
+  <div class="tribe-name">
+    魯凱族 <span class="tribe-eng">Rukai</span>
+  </div>
+
+  <div class="tribe-region">
+    主要分布：高雄、屏東山區
+  </div>
+
+  <p class="tribe-intro">
+    魯凱族以精緻的石板屋建築與百合花意象聞名，對土地與傳統領域有深厚情感。
+  </p>
+
+  <p class="tribe-feature">
+    文化特色：石板屋、百合花象徵、頭目制度與祭典儀式。
+  </p>
+
+  <div class="tribe-meta">
+    <span>點擊卡片進入詳細介紹頁</span>
+    <span>Rukai Page</span>
+  </div>
+</article>
+
 
           <!-- 鄒族 -->
-          <article class="tribe-card" onclick="window.location.href='tsou.html'">
-            <div class="tribe-chip">
-              <span class="tribe-chip-dot"></span>
-              中南部
-            </div>
-            <div class="tribe-name">鄒族<span class="tribe-eng">Tsou</span></div>
-            <div class="tribe-region">主要分布：阿里山地區</div>
-            <p class="tribe-intro">
-              鄒族傳統社會以男子集會所為核心，透過祭典與歌舞維繫族群記憶與信仰。
-            </p>
-            <p class="tribe-feature">
-              文化特色：戰祭、男子集會所制度、山地農耕與狩獵文化。
-            </p>
+<!-- 鄒族 -->
+<article class="tribe-card" data-region="central" onclick="window.location.href='tsou.html'">
+  <div class="tribe-chip">
+    <span class="tribe-chip-dot"></span>
+    中南部
+  </div>
 
-            <div class="tribe-meta">
-             <span>點擊卡片進入詳細介紹頁</span>
-             <span>Atayal Page</span>
-            </div>
-          </article>
+  <div class="tribe-name">
+    鄒族 <span class="tribe-eng">Tsou</span>
+  </div>
+
+  <div class="tribe-region">
+    主要分布：阿里山地區
+  </div>
+
+  <p class="tribe-intro">
+    鄒族傳統社會以男子集會所為核心，透過祭典與歌舞維繫族群記憶與信仰。
+  </p>
+
+  <p class="tribe-feature">
+    文化特色：戰祭、男子集會所制度、山地農耕與狩獵文化。
+  </p>
+
+  <div class="tribe-meta">
+    <span>點擊卡片進入詳細介紹頁</span>
+    <span>Tsou Page</span>
+  </div>
+</article>
+
 
           <!-- 卑南族 -->
-          <article class="tribe-card" onclick="window.location.href='puyuma.html'">
-            <div class="tribe-chip">
-              <span class="tribe-chip-dot"></span>
-              東南部
-            </div>
-            <div class="tribe-name">卑南族<span class="tribe-eng">Puyuma</span></div>
-            <div class="tribe-region">主要分布：台東平原一帶</div>
-            <p class="tribe-intro">
-              卑南族擁有豐富的歌舞與祭儀傳統，年齡階級與部落聚會在文化中扮演重要角色。
-            </p>
-            <p class="tribe-feature">
-              文化特色：猴祭、百年歌謠、部落年齡階級制度。
-            </p>
+<!-- 卑南族 -->
+<article class="tribe-card" data-region="east" onclick="window.location.href='puyuma.html'">
+  <div class="tribe-chip">
+    <span class="tribe-chip-dot"></span>
+    東南部
+  </div>
 
-            <div class="tribe-meta">
-              <span>點擊卡片進入詳細介紹頁</span>
-             <span>Atayal Page</span>
-            </div>
-          </article>
+  <div class="tribe-name">
+    卑南族 <span class="tribe-eng">Puyuma</span>
+  </div>
+
+  <div class="tribe-region">
+    主要分布：台東平原一帶
+  </div>
+
+  <p class="tribe-intro">
+    卑南族擁有豐富的歌舞與祭儀傳統，年齡階級與部落聚會在文化中扮演重要角色。
+  </p>
+
+  <p class="tribe-feature">
+    文化特色：猴祭、百年歌謠、部落年齡階級制度。
+  </p>
+
+  <div class="tribe-meta">
+    <span>點擊卡片進入詳細介紹頁</span>
+    <span>Puyuma Page</span>
+  </div>
+</article>
 
           <!-- 賽夏族 -->
-          <article class="tribe-card" onclick="window.location.href='saisiyat.html'">
-            <div class="tribe-chip">
-              <span class="tribe-chip-dot"></span>
-              北部山區
-            </div>
-            <div class="tribe-name">賽夏族<span class="tribe-eng">Saisiyat</span></div>
-            <div class="tribe-region">主要分布：新竹、苗栗山區</div>
-            <p class="tribe-intro">
-              賽夏族以矮靈祭聞名，透過儀式紀念族群歷史與與他族互動的記憶。
-            </p>
-            <p class="tribe-feature">
-              文化特色：矮靈祭、傳統歌舞、山林信仰與神話故事。
-            </p>
+<!-- 賽夏族 -->
+<article class="tribe-card" data-region="north" onclick="window.location.href='saisiyat.html'">
+  <div class="tribe-chip">
+    <span class="tribe-chip-dot"></span>
+    北部山區
+  </div>
 
-            <div class="tribe-meta">
-               <span>點擊卡片進入詳細介紹頁</span>
-             <span>Atayal Page</span>
-            </div>
-          </article>
+  <div class="tribe-name">
+    賽夏族 <span class="tribe-eng">Saisiyat</span>
+  </div>
+
+  <div class="tribe-region">
+    主要分布：新竹、苗栗山區
+  </div>
+
+  <p class="tribe-intro">
+    賽夏族以矮靈祭聞名，透過儀式紀念族群歷史與與他族互動的記憶。
+  </p>
+
+  <p class="tribe-feature">
+    文化特色：矮靈祭、傳統歌舞、山林信仰與神話故事。
+  </p>
+
+  <div class="tribe-meta">
+    <span>點擊卡片進入詳細介紹頁</span>
+    <span>Saisiyat Page</span>
+  </div>
+</article>
 
           <!-- 雅美/達悟族 -->
-          <article class="tribe-card" onclick="window.location.href='tao.html'">
-            <div class="tribe-chip">
-              <span class="tribe-chip-dot"></span>
-              離島地區
-            </div>
-            <div class="tribe-name">雅美族（達悟族）<span class="tribe-eng">Yami / Tao</span></div>
-            <div class="tribe-region">主要分布：蘭嶼</div>
-            <p class="tribe-intro">
-              達悟族以拼板舟、飛魚季與海洋知識著稱，生活與大海緊密相連。
-            </p>
-            <p class="tribe-feature">
-              文化特色：拼板舟工藝、飛魚文化、海洋環境與傳統生態智慧。
-            </p>
+<!-- 雅美族（達悟族） -->
+<article class="tribe-card" data-region="island" onclick="window.location.href='tao.html'">
+  <div class="tribe-chip">
+    <span class="tribe-chip-dot"></span>
+    離島地區
+  </div>
 
-            <div class="tribe-meta">
-             <span>點擊卡片進入詳細介紹頁</span>
-             <span>Atayal Page</span>
-            </div>
-          </article>
+  <div class="tribe-name">
+    雅美族（達悟族） <span class="tribe-eng">Yami / Tao</span>
+  </div>
+
+  <div class="tribe-region">
+    主要分布：蘭嶼
+  </div>
+
+  <p class="tribe-intro">
+    達悟族以拼板舟、飛魚季與海洋知識著稱，生活與大海緊密相連。
+  </p>
+
+  <p class="tribe-feature">
+    文化特色：拼板舟工藝、飛魚文化、海洋環境與傳統生態智慧。
+  </p>
+
+  <div class="tribe-meta">
+    <span>點擊卡片進入詳細介紹頁</span>
+    <span>Tao Page</span>
+  </div>
+</article>
+
         </div>
       </section>
 
@@ -765,5 +928,42 @@
       }
     });
   </script>
+  <script>
+  const searchInput = document.getElementById('searchInput');
+  const filterButtons = document.querySelectorAll('.chip[data-region]');
+  const cards = document.querySelectorAll('.tribe-card');
+
+  let activeRegion = 'all';
+
+  function filterCards() {
+    const q = searchInput.value.trim().toLowerCase();
+
+    cards.forEach(card => {
+      const text = card.innerText.toLowerCase();
+      const region = card.dataset.region || 'all';
+
+      const matchText = !q || text.includes(q);
+      const matchRegion = (activeRegion === 'all' || region === activeRegion);
+
+      card.style.display = (matchText && matchRegion) ? '' : 'none';
+    });
+  }
+
+  // 搜尋框事件
+  searchInput.addEventListener('input', filterCards);
+
+  // 篩選按鈕事件
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // 切換 active 樣式
+      filterButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      activeRegion = btn.dataset.region;
+      filterCards();
+    });
+  });
+</script>
+
 </body>
 </html>
