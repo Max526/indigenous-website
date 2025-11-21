@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>泰雅族 Atayal - 原住民族介紹</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans TC", sans-serif;
+      background: #f7fafc;
+      margin: 0;
+      padding: 0;
+      color: #1a202c;
+    }
+    header {
+      background: #2b6cb0;
+      color: #fff;
+      padding: 16px 12px;
+    }
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .title {
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+    .back-link {
+      color: #ebf8ff;
+      text-decoration: none;
+      font-size: 0.9rem;
+      border: 1px solid rgba(226, 232, 240, 0.7);
+      padding: 4px 10px;
+      border-radius: 999px;
+    }
+    .back-link:hover {
+      background: rgba(226, 232, 240, 0.2);
+    }
+    main {
+      max-width: 960px;
+      margin: 16px auto 24px;
+      padding: 0 12px 24px;
+    }
+    h2 {
+      margin-top: 16px;
+      margin-bottom: 8px;
+      font-size: 1.2rem;
+    }
+    h3 {
+      margin: 8px 0;
+      font-size: 1rem;
+    }
+    p {
+      font-size: 0.95rem;
+      color: #4a5568;
+    }
+    .map-container {
+      margin-top: 8px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(148, 163, 184, 0.45);
+    }
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .card {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 12px;
+      box-shadow: 0 8px 18px rgba(148, 163, 184, 0.35);
+    }
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+      display: block;
+    }
+    .note {
+      font-size: 0.8rem;
+      color: #a0aec0;
+      margin-top: 4px;
+    }
+    iframe, video {
+      width: 100%;
+      border-radius: 10px;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #a0aec0;
+      padding-bottom: 16px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="title">泰雅族 Atayal</div>
+      <a class="back-link" href="index.html">← 回到族群列表</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- 族群介紹 -->
+    <section>
+      <h2>族群介紹</h2>
+      <p>
+        泰雅族主要分布於台灣中北部的山區，如新北、桃園、宜蘭、苗栗、南投等地。
+        傳統社會以 <strong>gaga（祖訓）</strong> 為核心價值，強調族人之間的責任與互相扶持。
+        泰雅族也以紋面文化與精美的織布圖紋聞名，圖案往往代表家族、身分與記憶。
+      </p>
+    </section>
+
+    <!-- 小 Google Map -->
+    <section>
+      <h2>地理位置（Google 地圖示意）</h2>
+      <p></p>
+      <div class="map-container">
+        <!-- ⬇⬇ 到 Google 地圖複製「嵌入地圖」的 iframe，把 src 換掉即可 ⬇⬇ -->
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d464831.35594979295!2d120.58326580682139!3d24.46830130000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34685575633b72b5%3A0x621b88e383d02a6e!2z5rOw6ZuF5Y6f5L2P5rCR5paH5YyW55Si5qWt5ZyS5Y2A!5e0!3m2!1szh-TW!2stw!4v1763724089505!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          width="100%"
+          height="260"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+      <p class="note">
+        使用方式：在 Google 地圖搜尋地點 → 按「分享」 →「嵌入地圖」→ 複製 iframe 內的網址，
+        貼到上面 <code>YOUR_GOOGLE_MAP_EMBED_URL</code> 的位置即可。
+      </p>
+    </section>
+
+    <!-- 照片與影片 -->
+    <section>
+      <h2>照片與影片介紹</h2>
+      <div class="media-grid">
+        <!-- 照片卡片 -->
+        <div class="card">
+          <h3>紋面與織布文化</h3>
+          <img src="atayal.jpg" alt="泰雅族相關照片">
+          <p class="note">
+          
+          </p>
+        </div>
+
+        <!-- 影片卡片 -->
+        <div class="card">
+          <h3>影片介紹</h3>
+
+          <!-- 建議用 youtube-nocookie + 正確 referrerpolicy，減少錯誤 153 機率 -->
+         <iframe
+         src="https://www.youtube-nocookie.com/embed/XiFQGfXOt6M"
+         title="泰雅族影片介紹"
+         width="100%"
+         height="220"
+         frameborder="0"
+         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+         referrerpolicy="strict-origin-when-cross-origin"
+         allowfullscreen>
+         </iframe>
+          <!--
+          如果你有自己的影片檔（mp4），可以使用下面這段，把上面的 iframe 整段換成這個：
+
+          <video controls height="220">
+            <source src="video/atayal.mp4" type="video/mp4">
+            您的瀏覽器不支援 video 標籤。
+          </video>
+          -->
+
+          <p class="note">
+           
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 泰雅族介紹頁
+  </footer>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>鄒族 Tsou - 原住民族介紹</title>
+
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans TC", sans-serif;
+      background: #f7fafc;
+      margin: 0;
+      padding: 0;
+      color: #1a202c;
+    }
+
+    header {
+      background: #2b6cb0;
+      color: #fff;
+      padding: 16px 12px;
+    }
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .title {
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+    .back-link {
+      color: #ebf8ff;
+      text-decoration: none;
+      font-size: 0.9rem;
+      border: 1px solid rgba(255,255,255,0.7);
+      padding: 4px 10px;
+      border-radius: 999px;
+    }
+
+    main {
+      max-width: 960px;
+      margin: 18px auto 28px;
+      padding: 0 14px;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      margin-top: 18px;
+      margin-bottom: 8px;
+    }
+    h3 {
+      font-size: 1rem;
+      margin: 8px 0;
+    }
+    p {
+      font-size: 0.95rem;
+      color: #4a5568;
+    }
+
+    .map-container {
+      border-radius: 12px;
+      overflow: hidden;
+      margin-top: 8px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    }
+
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 12px;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+    }
+
+    .card img,
+    iframe,
+    video {
+      width: 100%;
+      border-radius: 10px;
+      display: block;
+    }
+
+    .note {
+      font-size: 0.8rem;
+      color: #a0aec0;
+      margin-top: 4px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.85rem;
+      color: #718096;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="title">鄒族 Tsou</div>
+      <a class="back-link" href="index.html">← 回到族群列表</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- 族群介紹 -->
+    <section>
+      <h2>族群介紹</h2>
+      <p>
+        鄒族主要分布在阿里山地區，傳統社會以<strong>男子集會所（kuba）</strong>為核心，
+        透過祭典、會議與歌舞來維繫族群記憶與文化傳承。
+      </p>
+      <p>
+        鄒族的年祭、戰祭等祭典十分重要，族人透過歌唱、擊鼓與舞蹈，
+        表達對祖靈、自然與部落的敬意，也展現出強烈的群體意識與榮譽感。
+      </p>
+    </section>
+
+    <!-- Google Map -->
+    <section>
+      <h2>地理位置（Google 地圖示意）</h2>
+      <p></p>
+
+      <div class="map-container">
+        <!-- 到 Google 地圖：分享 → 嵌入 → 複製 src 換掉這行 -->
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d234211.86672002936!2d120.48626087080957!3d23.476315674832676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346ee70029af3595%3A0x6cc1baa5ad82ae20!2z6YSS5peP6Ieq54S26IiH5paH5YyW5Lit5b-D!5e0!3m2!1szh-TW!2stw!4v1763726710696!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          width="100%" height="260"
+          style="border:0;"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer-when-cross-origin">
+        </iframe>
+      </div>
+
+      <p class="note"></p>
+    </section>
+
+    <!-- 照片與影片 -->
+    <section>
+      <h2>照片與影片介紹</h2>
+
+      <div class="media-grid">
+
+        <!-- 照片 -->
+        <div class="card">
+          <h3>鄒族文化照片</h3>
+          <img src="tsou.jpg" alt="鄒族照片">
+          <p class="note"></p>
+        </div>
+
+        <!-- 影片 -->
+        <div class="card">
+          <h3>影片介紹</h3>
+
+          <!-- 如果有 YouTube 影片就把 XXXXXXXXXXX 換掉 -->
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/dyXyFPcOlh0"
+            title="鄒族影片介紹"
+            height="220"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen>
+          </iframe>
+
+          <p class="note">
+           
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    © 2025 鄒族介紹頁
+  </footer>
+</body>
+</html>

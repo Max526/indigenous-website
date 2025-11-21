@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>臺灣原住民族介紹</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans TC", sans-serif;
+      background: linear-gradient(135deg, #f7fafc, #edf2ff);
+      color: #1a202c;
+      line-height: 1.6;
+    }
+
+    .page-wrapper {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: #2b6cb0;
+      color: #fff;
+      padding: 24px 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+
+    .header-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .site-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+    }
+
+    .site-subtitle {
+      font-size: 0.95rem;
+      opacity: 0.9;
+    }
+
+    .nav-links a {
+      color: #ebf8ff;
+      text-decoration: none;
+      margin-left: 16px;
+      font-size: 0.95rem;
+      border-radius: 999px;
+      padding: 6px 12px;
+      border: 1px solid rgba(226, 232, 240, 0.5);
+      transition: background 0.2s, transform 0.1s;
+    }
+
+    .nav-links a:hover {
+      background: rgba(226, 232, 240, 0.2);
+      transform: translateY(-1px);
+    }
+
+    main {
+      flex: 1;
+    }
+
+    .hero {
+      max-width: 1080px;
+      margin: 32px auto 24px;
+      padding: 24px 16px;
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.5fr);
+      gap: 24px;
+      align-items: center;
+    }
+
+    .hero-text h1 {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+
+    .hero-text p {
+      font-size: 1rem;
+      color: #4a5568;
+      margin-bottom: 16px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      background: #ebf8ff;
+      color: #2b6cb0;
+      margin-bottom: 12px;
+    }
+
+    .hero-badge span {
+      margin-left: 6px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .btn-primary,
+    .btn-ghost {
+      border-radius: 999px;
+      padding: 8px 18px;
+      font-size: 0.95rem;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.1s, box-shadow 0.1s, background 0.2s, color 0.2s;
+    }
+
+    .btn-primary {
+      background: #2b6cb0;
+      color: #fff;
+      box-shadow: 0 8px 20px rgba(43, 108, 176, 0.35);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 24px rgba(43, 108, 176, 0.45);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: #2b6cb0;
+      border: 1px solid #2b6cb0;
+    }
+
+    .btn-ghost:hover {
+      background: #2b6cb0;
+      color: #fff;
+    }
+
+    .hero-illustration {
+      background: #fff;
+      border-radius: 24px;
+      padding: 16px;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
+      border: 1px solid #e2e8f0;
+    }
+
+    .hero-illustration-inner {
+      border-radius: 18px;
+      border: 1px dashed #cbd5e0;
+      padding: 12px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+      font-size: 0.8rem;
+    }
+
+    .tribe-tag {
+      border-radius: 14px;
+      padding: 8px 10px;
+      background: #f7fafc;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .tribe-tag-title {
+      font-weight: 600;
+      font-size: 0.85rem;
+    }
+
+    .tribe-tag-desc {
+      font-size: 0.75rem;
+      color: #4a5568;
+    }
+
+    .content-section {
+      max-width: 1080px;
+      margin: 0 auto 32px;
+      padding: 0 16px;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 12px;
+      gap: 12px;
+    }
+
+    .section-header h2 {
+      font-size: 1.4rem;
+    }
+
+    .section-subtitle {
+      font-size: 0.9rem;
+      color: #4a5568;
+    }
+
+    .tribe-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 16px;
+    }
+
+    .tribe-card {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 14px 14px 16px;
+      box-shadow: 0 10px 24px rgba(148, 163, 184, 0.25);
+      border: 1px solid rgba(203, 213, 224, 0.7);
+      transition: transform 0.12s ease-out, box-shadow 0.12s ease-out;
+      cursor: pointer; 
+    }
+
+    .tribe-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 32px rgba(148, 163, 184, 0.45);
+    }
+
+    .tribe-chip {
+      display: inline-flex;
+      align-items: center;
+      background: #ebf8ff;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      color: #2b6cb0;
+      padding: 3px 8px;
+      margin-bottom: 8px;
+    }
+
+    .tribe-chip-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #2b6cb0;
+      margin-right: 6px;
+    }
+
+    .tribe-name {
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+
+    .tribe-eng {
+      font-size: 0.8rem;
+      color: #4a5568;
+      margin-left: 4px;
+    }
+
+    .tribe-region {
+      font-size: 0.8rem;
+      color: #4a5568;
+      margin-top: 4px;
+    }
+
+    .tribe-intro {
+      font-size: 0.85rem;
+      color: #2d3748;
+      margin-top: 8px;
+    }
+
+    .tribe-feature {
+      font-size: 0.8rem;
+      color: #4a5568;
+      margin-top: 6px;
+    }
+
+    .tribe-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 10px;
+      font-size: 0.75rem;
+      color: #a0aec0;
+    }
+
+    /* 新增：卡片內的「查看照片 / 音樂」按鈕 */
+    .media-btn {
+      margin-top: 10px;
+      width: 100%;
+      padding: 8px 12px;
+      border-radius: 10px;
+      border: none;
+      background: #2b6cb0;
+      color: #ffffff;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: background 0.15s, transform 0.1s, box-shadow 0.1s;
+    }
+
+    .media-btn:hover {
+      background: #24589a;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(37, 99, 235, 0.35);
+    }
+
+    footer {
+      margin-top: auto;
+      padding: 16px;
+      background: #1a202c;
+      color: #e2e8f0;
+      font-size: 0.8rem;
+    }
+
+    .footer-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .scroll-link {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px dashed rgba(226, 232, 240, 0.6);
+    }
+
+    /* 新增：Modal 樣式 */
+    .modal {
+      display: none; /* 預設隱藏 */
+      position: fixed;
+      z-index: 10000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      justify-content: center;
+      align-items: center;
+      padding: 16px;
+    }
+
+    .modal-content {
+      background: #ffffff;
+      padding: 20px 20px 16px;
+      border-radius: 16px;
+      width: 100%;
+      max-width: 460px;
+      text-align: center;
+      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.5);
+      position: relative;
+    }
+
+    .modal-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .modal-close-btn {
+      position: absolute;
+      right: 14px;
+      top: 8px;
+      font-size: 26px;
+      cursor: pointer;
+      color: #4a5568;
+    }
+
+    .modal-close-btn:hover {
+      color: #1a202c;
+    }
+
+    .modal-image {
+      max-width: 100%;
+      border-radius: 12px;
+      margin-top: 8px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    }
+
+    .modal-caption {
+      font-size: 0.85rem;
+      color: #4a5568;
+      margin-top: 8px;
+    }
+
+    .modal-audio {
+      width: 100%;
+      margin-top: 14px;
+    }
+
+    @media (max-width: 800px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-illustration {
+        order: -1;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header {
+        padding: 16px 12px;
+      }
+
+      .hero {
+        margin-top: 20px;
+      }
+
+      .site-title {
+        font-size: 1.3rem;
+      }
+
+      .hero-text h1 {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrapper">
+    <header>
+      <div class="header-inner">
+        <div>
+          <div class="site-title">臺灣原住民族介紹</div>
+          <div class="site-subtitle">Taiwan Indigenous Peoples · 初學者友善小百科</div>
+        </div>
+        <nav class="nav-links">
+          <a href="#tribes">各族簡介</a>
+          <a href="#about">關於本網站</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="top">
+        <div class="hero-text">
+          <div class="hero-badge">
+            <span>📚 教學展示用小網站</span>
+          </div>
+          <h1>用一個網站，認識臺灣的多元原住民族文化</h1>
+          <p>
+            歡迎來到這裡，探索臺灣最古老、也最具生命力的文化資產。
+
+臺灣是南島語族重要的發源地。本網站旨在引導您認識目前官方認定的 16 個原住民族群，呈現他們獨特的語言、祭典、藝術與生態智慧。
+
+我們的使命是促進理解與尊重。讓我們一起聆聽來自山脈、海洋與部落的聲音，共同守護這份屬於臺灣的珍貴多元性。
+          </p>
+          <div class="hero-actions">
+            <button class="btn-primary" onclick="document.getElementById('tribes').scrollIntoView({ behavior: 'smooth' });">
+              查看各族簡介
+            </button>
+            <button class="btn-ghost" onclick="document.getElementById('about').scrollIntoView({ behavior: 'smooth' });">
+              如何聯絡我們?
+            </button>
+          </div>
+        </div>
+
+        <div class="hero-illustration">
+          <div class="hero-illustration-inner">
+            <div class="tribe-tag">
+              <div class="tribe-tag-title">阿美族 Amis</div>
+              <div class="tribe-tag-desc">東部沿海、以豐年祭與歌舞聞名。</div>
+            </div>
+            <div class="tribe-tag">
+              <div class="tribe-tag-title">泰雅族 Atayal</div>
+              <div class="tribe-tag-desc">守護 gaga 祖訓，傳統紋面與織布深具特色。</div>
+            </div>
+            <div class="tribe-tag">
+              <div class="tribe-tag-title">排灣族 Paiwan</div>
+              <div class="tribe-tag-desc">南台灣山區，貴族制度與琉璃珠文化。</div>
+            </div>
+            <div class="tribe-tag">
+              <div class="tribe-tag-title">布農族 Bunun</div>
+              <div class="tribe-tag-desc">多居高山地區，以小米文化與八部合音著稱。</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section" id="tribes">
+        <div class="section-header">
+          <div>
+            <h2>部分臺灣原住民族簡介</h2>
+            <p class="section-subtitle">以下僅示範數族，你可以依需要自行增加或修改內容。</p>
+          </div>
+        </div>
+
+        <div class="tribe-grid">
+
+          <!-- 阿美族 -->
+<article class="tribe-card" onclick="window.location.href='amis.html'">
+  <div class="tribe-chip">
+    <span class="tribe-chip-dot"></span>
+    東部沿海
+  </div>
+  <div class="tribe-name">阿美族<span class="tribe-eng">Amis</span></div>
+  <div class="tribe-region">主要分布：花蓮、台東、宜蘭等東部沿海地區</div>
+  <p class="tribe-intro">
+    阿美族是台灣人口最多的原住民族之一，傳統上以農耕與漁撈為主，社會組織具有明顯的年齡階級制度。
+  </p>
+  <p class="tribe-feature">
+    文化特色：豐年祭、歌舞、口傳歷史與母語保存運動。
+  </p>
+  <div class="tribe-meta">
+    <span>點擊卡片進入詳細介紹頁</span>
+    <span>Amis Page</span>
+  </div>
+</article>
+
+
+        <!-- 泰雅族卡片（index.html 裡） -->
+<article class="tribe-card" onclick="window.location.href='atayal.html'">
+  <div class="tribe-chip">
+    <span class="tribe-chip-dot"></span>
+    中北部山區
+  </div>
+  <div class="tribe-name">泰雅族<span class="tribe-eng">Atayal</span></div>
+  <div class="tribe-region">主要分布：新北、桃園、宜蘭、南投等山區</div>
+  <p class="tribe-intro">
+    泰雅族以嚴謹的 gaga 祖訓為核心價值，傳統紋面與織布圖紋是族群重要的文化象徵。
+  </p>
+  <p class="tribe-feature">
+    文化特色：紋面文化、織布技藝、山林知識與狩獵傳統。
+  </p>
+  <div class="tribe-meta">
+    <span>點擊卡片進入詳細介紹頁</span>
+    <span>Atayal Page</span>
+  </div>
+</article>
+
+
+          <!-- 排灣族 -->
+         <article class="tribe-card" onclick="window.location.href='paiwan.html'">
+            <div class="tribe-chip">
+              <span class="tribe-chip-dot"></span>
+              南部山區
+            </div>
+            <div class="tribe-name">排灣族<span class="tribe-eng">Paiwan</span></div>
+            <div class="tribe-region">主要分布：屏東、台東南部山區</div>
+            <p class="tribe-intro">
+              排灣族擁有發展成熟的貴族制度與家族系譜，陶壺與琉璃珠象徵身分與歷史記憶。
+
+            </p>
+            <p class="tribe-feature">
+              文化特色：貴族階級、百步蛇圖騰、琉璃珠與陶壺信仰。
+
+            </p>
+            <div class="tribe-meta">
+    <span>點擊卡片進入詳細介紹頁</span>
+    <span>Atayal Page</span>
+            </div>
+          </article>
+
+          <!-- 布農族 -->
+         <article class="tribe-card" onclick="window.location.href='bunun.html'">
+            <div class="tribe-chip">
+              <span class="tribe-chip-dot"></span>
+              中部山區
+            </div>
+            <div class="tribe-name">布農族<span class="tribe-eng">Bunun</span></div>
+            <div class="tribe-region">主要分布：南投、花蓮、高雄等中高海拔山區</div>
+            <p class="tribe-intro">
+              布農族多居住於山區，傳統社會以小米農耕為核心，重視家族合作與共享。
+            </p>
+            <p class="tribe-feature">
+              文化特色：小米祭、八部合音、狩獵文化與山林生活智慧。
+            </p>
+
+            <div class="tribe-meta">
+             <span>點擊卡片進入詳細介紹頁</span>
+             <span>Atayal Page</span>
+            </div>
+          </article>
+
+          <!-- 魯凱族 -->
+          <article class="tribe-card" onclick="window.location.href='rukai.html'">
+            <div class="tribe-chip">
+              <span class="tribe-chip-dot"></span>
+              南部山區
+            </div>
+            <div class="tribe-name">魯凱族<span class="tribe-eng">Rukai</span></div>
+            <div class="tribe-region">主要分布：高雄、屏東山區</div>
+            <p class="tribe-intro">
+              魯凱族以精緻的石板屋建築與百合花意象聞名，對土地與傳統領域有深厚情感。
+            </p>
+            <p class="tribe-feature">
+              文化特色：石板屋、百合花象徵、頭目制度與祭典儀式。
+            </p>
+
+            <div class="tribe-meta">
+             <span>點擊卡片進入詳細介紹頁</span>
+             <span>Atayal Page</span>
+            </div>
+          </article>
+
+          <!-- 鄒族 -->
+          <article class="tribe-card" onclick="window.location.href='tsou.html'">
+            <div class="tribe-chip">
+              <span class="tribe-chip-dot"></span>
+              中南部
+            </div>
+            <div class="tribe-name">鄒族<span class="tribe-eng">Tsou</span></div>
+            <div class="tribe-region">主要分布：阿里山地區</div>
+            <p class="tribe-intro">
+              鄒族傳統社會以男子集會所為核心，透過祭典與歌舞維繫族群記憶與信仰。
+            </p>
+            <p class="tribe-feature">
+              文化特色：戰祭、男子集會所制度、山地農耕與狩獵文化。
+            </p>
+
+            <div class="tribe-meta">
+             <span>點擊卡片進入詳細介紹頁</span>
+             <span>Atayal Page</span>
+            </div>
+          </article>
+
+          <!-- 卑南族 -->
+          <article class="tribe-card" onclick="window.location.href='puyuma.html'">
+            <div class="tribe-chip">
+              <span class="tribe-chip-dot"></span>
+              東南部
+            </div>
+            <div class="tribe-name">卑南族<span class="tribe-eng">Puyuma</span></div>
+            <div class="tribe-region">主要分布：台東平原一帶</div>
+            <p class="tribe-intro">
+              卑南族擁有豐富的歌舞與祭儀傳統，年齡階級與部落聚會在文化中扮演重要角色。
+            </p>
+            <p class="tribe-feature">
+              文化特色：猴祭、百年歌謠、部落年齡階級制度。
+            </p>
+
+            <div class="tribe-meta">
+              <span>點擊卡片進入詳細介紹頁</span>
+             <span>Atayal Page</span>
+            </div>
+          </article>
+
+          <!-- 賽夏族 -->
+          <article class="tribe-card" onclick="window.location.href='saisiyat.html'">
+            <div class="tribe-chip">
+              <span class="tribe-chip-dot"></span>
+              北部山區
+            </div>
+            <div class="tribe-name">賽夏族<span class="tribe-eng">Saisiyat</span></div>
+            <div class="tribe-region">主要分布：新竹、苗栗山區</div>
+            <p class="tribe-intro">
+              賽夏族以矮靈祭聞名，透過儀式紀念族群歷史與與他族互動的記憶。
+            </p>
+            <p class="tribe-feature">
+              文化特色：矮靈祭、傳統歌舞、山林信仰與神話故事。
+            </p>
+
+            <div class="tribe-meta">
+               <span>點擊卡片進入詳細介紹頁</span>
+             <span>Atayal Page</span>
+            </div>
+          </article>
+
+          <!-- 雅美/達悟族 -->
+          <article class="tribe-card" onclick="window.location.href='tao.html'">
+            <div class="tribe-chip">
+              <span class="tribe-chip-dot"></span>
+              離島地區
+            </div>
+            <div class="tribe-name">雅美族（達悟族）<span class="tribe-eng">Yami / Tao</span></div>
+            <div class="tribe-region">主要分布：蘭嶼</div>
+            <p class="tribe-intro">
+              達悟族以拼板舟、飛魚季與海洋知識著稱，生活與大海緊密相連。
+            </p>
+            <p class="tribe-feature">
+              文化特色：拼板舟工藝、飛魚文化、海洋環境與傳統生態智慧。
+            </p>
+
+            <div class="tribe-meta">
+             <span>點擊卡片進入詳細介紹頁</span>
+             <span>Atayal Page</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-section" id="about">
+        <div class="section-header">
+          <div>
+            <h2>關於本網站與延伸應用</h2>
+            <p class="section-subtitle">利用HTML＋CSS設計原住民族介紹網站，幫助大家更了解原住民。</p>
+          </div>
+        </div>
+
+        <p style="font-size: 0.95rem; color: #4a5568; margin-bottom: 8px;">
+
+        </p>
+        <ul style="font-size: 0.9rem; color: #4a5568; margin-left: 1.2rem; list-style: disc;">
+          <li>聯絡地址 : 國立中興大學生機系K104教室</li>
+          <li>聯絡我們 : 國立中興大學計算機概論第四組張信志、林晉逸、施士朋  </li>
+          <li>資料參考來源 : https://www.cip.gov.tw/zh-tw/tribe/grid-list/index.html?cumid=8F19BF08AE220D65</li>
+          <li>此網站無營利來源，放心使用</li>
+        </ul>
+
+        <p style="font-size: 0.9rem; color: #718096; margin-top: 10px;">
+
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <span>© 2025 計算機概論_臺灣原住民族介紹</span>
+        <span><a class="scroll-link" href="#top">回到頁首 ↑</a></span>
+      </div>
+    </footer>
+  </div>
+
+  <!-- 🔔 Modal：顯示每一族的照片 + 音樂 -->
+  <div id="mediaModal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close-btn" onclick="closeModal()">&times;</span>
+      <h2 id="modalTitle" class="modal-title"></h2>
+      <img id="modalImage" class="modal-image" src="" alt="族群照片">
+      <p class="modal-caption">以下為示意圖片與傳統音樂，實際內容可依需要替換。</p>
+      <audio id="modalAudio" class="modal-audio" controls>
+        <source id="audioSource" src="" type="audio/mp3">
+        您的瀏覽器不支援 audio 標籤。
+      </audio>
+    </div>
+  </div>
+
+  <script>
+    function openModal(title, image, audio) {
+      document.getElementById("modalTitle").innerText = title;
+      document.getElementById("modalImage").src = image;
+      document.getElementById("audioSource").src = audio;
+
+      const audioEl = document.getElementById("modalAudio");
+      audioEl.load();
+      audioEl.currentTime = 0;
+      audioEl.play().catch(() => {
+        /* 若瀏覽器阻擋自動播放就忽略 */
+      });
+
+      document.getElementById("mediaModal").style.display = "flex";
+    }
+
+    function closeModal() {
+      document.getElementById("mediaModal").style.display = "none";
+      const audioEl = document.getElementById("modalAudio");
+      audioEl.pause();
+    }
+
+    // 點擊黑色背景也可以關閉
+    window.addEventListener("click", function (e) {
+      const modal = document.getElementById("mediaModal");
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+  </script>
+</body>
+</html>
