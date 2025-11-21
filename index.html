@@ -5,6 +5,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>臺灣原住民族介紹</title>
   <style>
+    footer {
+  background: #1a202c; /* 深色背景 */
+  color: #cbd5e0;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.footer-feedback {
+  color: #ebf8ff;
+  background: rgba(255,255,255,0.15);
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.footer-feedback:hover {
+  background: rgba(255,255,255,0.25);
+}
+
+    .time-display {
+  color: #ebf8ff;
+  font-size: 0.9rem;
+  background: rgba(255,255,255,0.15);
+  padding: 4px 10px;
+  border-radius: 10px;
+}
+
     .search-filter {
   max-width: 960px;
   margin: 20px auto 10px;
@@ -486,6 +522,10 @@
       <div class="header-inner">
         <div>
           <div class="site-title">臺灣原住民族介紹</div>
+         
+
+          <div id="time-box" class="time-display"></div>
+
           <div class="site-subtitle">Taiwan Indigenous Peoples · 初學者友善小百科</div>
         </div>
         <nav class="nav-links">
@@ -544,7 +584,7 @@
       <section class="content-section" id="tribes">
         <div class="section-header">
           <div>
-            <h2>部分臺灣原住民族簡介</h2>
+            <h2>臺灣原住民族簡介</h2>
             <p class="section-subtitle"></p>
           </div>
         </div>
@@ -846,6 +886,145 @@
     <span>Tao Page</span>
   </div>
 </article>
+<!-- 太魯閣族） -->
+<article class="tribe-card" data-region="north" onclick="window.location.href='truku.html'">
+  <div class="tribe-chip"><span class="tribe-chip-dot"></span> 北部山區 </div>
+
+  <div class="tribe-name">太魯閣族 <span class="tribe-eng">Truku</span></div>
+  <div class="tribe-region">主要分布：花蓮太魯閣、秀林地區</div>
+
+  <p class="tribe-intro">
+    太魯閣族擅長山林生活，gaya 文化規範深深影響族群價值與傳統行為。
+  </p>
+
+  <p class="tribe-feature">
+    文化特色：編織文化、狩獵技藝、gaya 族規。
+  </p>
+
+  <div class="tribe-meta">
+    <span>點擊卡片進入詳細介紹頁</span><span>Truku Page</span>
+  </div>
+</article>
+<!-- 噶瑪蘭族） -->
+<article class="tribe-card" data-region="east" onclick="window.location.href='kavalan.html'">
+  <div class="tribe-chip"><span class="tribe-chip-dot"></span> 東部沿海 </div>
+
+  <div class="tribe-name">噶瑪蘭族 <span class="tribe-eng">Kavalan</span></div>
+  <div class="tribe-region">主要分布：花蓮、宜蘭沿海</div>
+
+  <p class="tribe-intro">
+    噶瑪蘭族是台灣平埔族群之一，以獨特語言與海洋文化著稱。
+  </p>
+
+  <p class="tribe-feature">
+    文化特色：香蕉絲編織、海洋信仰、古調歌謠。
+  </p>
+
+  <div class="tribe-meta">
+    <span>點擊卡片進入詳細介紹頁</span><span>Kavalan Page</span>
+  </div>
+</article>
+<!-- 邵族） -->
+
+<article class="tribe-card" data-region="central" onclick="window.location.href='thao.html'">
+  <div class="tribe-chip"><span class="tribe-chip-dot"></span> 中部湖區 </div>
+
+  <div class="tribe-name">邵族 <span class="tribe-eng">Thao</span></div>
+  <div class="tribe-region">主要分布：日月潭一帶</div>
+
+  <p class="tribe-intro">
+    邵族是台灣人口最少的原住民族之一，生活與日月潭密不可分。
+  </p>
+
+  <p class="tribe-feature">
+    文化特色：日月潭漁獵文化、傳統祭典、湖居生活。
+  </p>
+
+  <div class="tribe-meta">
+    <span>點擊卡片進入詳細介紹頁</span><span>Thao Page</span>
+  </div>
+</article>
+<!-- 撒奇萊雅族） -->
+
+<article class="tribe-card" data-region="east" onclick="window.location.href='sakizaya.html'">
+  <div class="tribe-chip"><span class="tribe-chip-dot"></span> 東部平原 </div>
+
+  <div class="tribe-name">撒奇萊雅族 <span class="tribe-eng">Sakizaya</span></div>
+  <div class="tribe-region">主要分布：花蓮吉安、北埔等地</div>
+
+  <p class="tribe-intro">
+    撒奇萊雅族擁有強烈族群認同，太魯閣事件後仍維繫文化傳承。
+  </p>
+
+  <p class="tribe-feature">
+    文化特色：palamal（祈福儀式）、口傳史詩、農耕文化。
+  </p>
+
+  <div class="tribe-meta">
+    <span>點擊卡片進入詳細介紹頁</span><span>Sakizaya Page</span>
+  </div>
+</article>
+<!-- 賽德克族） -->
+
+<article class="tribe-card" data-region="central" onclick="window.location.href='seediq.html'">
+  <div class="tribe-chip"><span class="tribe-chip-dot"></span> 中部山區 </div>
+
+  <div class="tribe-name">賽德克族 <span class="tribe-eng">Seediq</span></div>
+  <div class="tribe-region">主要分布：南投、花蓮山區</div>
+
+  <p class="tribe-intro">
+    賽德克族以強烈族群精神著稱，霧社事件是其歷史重要記憶。
+  </p>
+
+  <p class="tribe-feature">
+    文化特色：紋面傳統、勇士精神、山林文化。
+  </p>
+
+  <div class="tribe-meta">
+    <span>點擊卡片進入詳細介紹頁</span><span>Seediq Page</span>
+  </div>
+</article>
+<!-- 卡那卡那富族） -->
+
+<article class="tribe-card" data-region="south" onclick="window.location.href='kanakanavu.html'">
+  <div class="tribe-chip"><span class="tribe-chip-dot"></span> 南部山區 </div>
+
+  <div class="tribe-name">卡那卡那富族 <span class="tribe-eng">Kanakanavu</span></div>
+  <div class="tribe-region">主要分布：高雄那瑪夏區</div>
+
+  <p class="tribe-intro">
+    卡那卡那富族語屬南島語系，文化特色與祭典承襲山林傳統。
+  </p>
+
+  <p class="tribe-feature">
+    文化特色：masalut 祭典、部落傳統組織。
+  </p>
+
+  <div class="tribe-meta">
+    <span>點擊卡片進入詳細介紹頁</span><span>Kanakanavu Page</span>
+  </div>
+</article>
+<!-- 拉阿魯哇族） -->
+
+<article class="tribe-card" data-region="south" onclick="window.location.href='saaroa.html'">
+  <div class="tribe-chip"><span class="tribe-chip-dot"></span> 南部山區 </div>
+
+  <div class="tribe-name">拉阿魯哇族 <span class="tribe-eng">Saaroa</span></div>
+  <div class="tribe-region">主要分布：高雄那瑪夏區、桃源區</div>
+
+  <p class="tribe-intro">
+    拉阿魯哇族擁有獨特祭典與神話文化，強調族群團結與傳統價值。
+  </p>
+
+  <p class="tribe-feature">
+    文化特色：miatungusu 祭典、傳統口述文化。
+  </p>
+
+  <div class="tribe-meta">
+    <span>點擊卡片進入詳細介紹頁</span><span>Saaroa Page</span>
+  </div>
+</article>
+
 
         </div>
       </section>
@@ -874,11 +1053,13 @@
 
         </p>
       </section>
+      
+
     </main>
 
     <footer>
       <div class="footer-inner">
-        <span>© 2025 第四組_計算機概論_臺灣原住民族介紹</span>
+         <a class="footer-feedback" href="feedback.html">意見回饋</a>
         <span><a class="scroll-link" href="#top">回到頁首 ↑</a></span>
       </div>
     </footer>
@@ -963,6 +1144,27 @@
       filterCards();
     });
   });
+</script>
+<script>
+  function updateTime() {
+    const now = new Date();
+    const timeString = now.toLocaleString('zh-TW', {
+      hour12: false,
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit"
+    });
+    document.getElementById("time-box").textContent = timeString;
+  }
+
+  // 先執行一次
+  updateTime();
+
+  // 每秒更新
+  setInterval(updateTime, 1000);
 </script>
 
 </body>

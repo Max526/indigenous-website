@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<title>意見回饋 Feedback</title>
+
+<style>
+  body {
+    font-family: "Noto Sans TC", sans-serif;
+    background: #f7fafc;
+    margin: 0;
+    padding: 0;
+    color: #1a202c;
+  }
+
+  header {
+    background: #2b6cb0;
+    color: #fff;
+    padding: 16px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+
+  .container {
+    max-width: 600px;
+    margin: 30px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  }
+
+  label {
+    font-weight: 600;
+    margin-top: 12px;
+    display: block;
+  }
+
+  input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cbd5e0;
+    border-radius: 8px;
+    margin-top: 4px;
+    font-size: 0.95rem;
+  }
+
+  .submit-btn {
+    background: #2b6cb0;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    margin-top: 18px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+
+  .submit-btn:hover {
+    background: #1e4e82;
+  }
+</style>
+</head>
+
+<body>
+
+<header>意見回饋 Feedback</header>
+
+<div class="container">
+  <form action="mailto:s112040074@mail.nchu.edu.tw" method="POST" enctype="text/plain">
+
+    <label>你的姓名（選填）</label>
+    <input type="text" name="姓名" placeholder="可不填">
+
+    <label>你對本網站的意見或建議</label>
+    <textarea name="意見內容" rows="6" placeholder="請輸入您的意見..."></textarea>
+
+    <button type="submit" class="submit-btn">送出</button>
+
+  </form>
+</div>
+
+</body>
+</html>
